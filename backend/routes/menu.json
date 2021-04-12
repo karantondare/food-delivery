@@ -1,0 +1,146 @@
+[
+  {
+    "id": "En1i37",
+    "name": "Classic Margherita",
+    "description": "Mozzarella Cheese | Handtossed Crust.",
+    "image": "https://user-images.githubusercontent.com/64483658/114303953-3b235f80-9aee-11eb-998d-bbefbeaf9bf4.jpg",
+    "price": "34900",
+    "currency": "INR",
+    "veg": true
+  },
+  {
+    "id": "Ee2t59",
+    "name": "Corn Veggie Delight Pizza",
+    "description": "Mozzarella Cheese | American Corn | Tomato | Green Bellpeppers | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114303987-6e65ee80-9aee-11eb-8118-922872d4fa90.jpg",
+    "price": "44900",
+    "currency": "INR",
+    "veg": true
+  },
+  {
+    "id": "Ey1k58",
+    "name": "Exotica Paneer Pizza",
+    "description": "Mozzarella Cheese | Paneer Tikka | American Corn | Tomato | Onion | Handtossed Crust.",
+    "image": "https://user-images.githubusercontent.com/64483658/114304007-89386300-9aee-11eb-99f8-705cd7c1fa52.jpg",
+    "price": "44900",
+    "currency": "INR",
+    "veg": true
+  },
+  {
+    "id": "Em8k41",
+    "name": "Famous Five Pizza",
+    "description": "Mozzarella Cheese | Paneer Tikka | American Corn | Jalapeno | Olives | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114304039-b553e400-9aee-11eb-9b89-fc337e6ddb6d.jpg",
+    "price": "44900",
+    "currency": "INR",
+    "veg": true
+  },
+  {
+    "id": "Eo7o43",
+    "name": "Farmfresh Supreme",
+    "description": "Mozzarella Cheese | Corn | Green Bellpeppers |Tomato | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114352390-70c95680-9b89-11eb-86f9-046d8f7723f7.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": true
+  },
+  {
+    "id": "Ee41h8",
+    "name": "Maharaja Veg Pizza",
+    "description": "Mozzarella Cheese | Chicken Sausage | Chicken Kheema | Tomato | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114353191-5c398e00-9b8a-11eb-8ff1-6ab04ca4a192.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": true
+  },
+  {
+    "id": "Ee4u8z",
+    "name": "Middle Eastern Supreme",
+    "description": "Mozzarella Cheese | Falafel | Roasted Veggies - Corn, Bellpeppers | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114353424-9f93fc80-9b8a-11eb-98c3-2e4cfc3591b4.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": true
+  },
+  {
+    "id": "E79Hjy",
+    "name": "Veg Overload Pizza",
+    "description": "Mozzarella Cheese | Jalapeno | Green Bellpeppers | Tomato | American Corn | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114354091-65772a80-9b8b-11eb-9d48-a8ddcf2518f2.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": true
+  },
+  {
+    "id": "Ek1y48",
+    "name": "Big Western Pizza",
+    "description": "Mozzarella Cheese | Chicken Salami | BBQ Chicken | Tomato | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114303701-18447b80-9aed-11eb-9d0c-1b3ecea84bdb.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": false
+  },
+  {
+    "id": "Ek3r48",
+    "name": "Chicken Delight Pizza",
+    "description": "Mozzarella Cheese | Chicken Salami | Tomato | American Corn | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114303793-7e310300-9aed-11eb-92e6-813911bf1fff.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": false
+  },
+  {
+    "id": "tk1y98",
+    "name": "Chicken Maximus Pizza",
+    "description": "Mozzarella Cheese | BBQ Chicken | Chicken Salami | Chicken Kheema | Chicken Sausage | Olives | Onion | 11 Inch Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114303861-d7009b80-9aed-11eb-8625-33f30b092bf2.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": false
+  },
+  {
+    "id": "Ek5g49",
+    "name": "Chicken Tikka & Kheema",
+    "description": "Mozzarella Cheese | Chicken Kheema | Chicken Tikka | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114303906-06afa380-9aee-11eb-82c1-462a6f0e4e73.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": false
+  },
+  {
+    "id": "Ek7o49",
+    "name": "Double Chicken Feast Pizza",
+    "description": "Mozzarella Cheese | Chicken Salami | Chicken Tikka | American Corn | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114352390-70c95680-9b89-11eb-86f9-046d8f7723f7.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": false
+  },
+  {
+    "id": "Eg49g9",
+    "name": "Kheema Sausage Pizza",
+    "description": "Mozzarella Cheese | Chicken Sausage | Chicken Kheema | Tomato | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114352917-0f55b780-9b8a-11eb-8273-0c5b0e94fd45.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": false
+  },
+  {
+    "id": "Etg46v",
+    "name": "Mutton Overload Pizza",
+    "description": "Mozzarella Cheese | Mutton | Chicken Kheema | Green Bellpepper | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114353683-eda90000-9b8a-11eb-9c67-fd038bbca6d3.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": false
+  },
+  {
+    "id": "E80oy6",
+    "name": "Non-veg Paradise",
+    "description": "Mozzarella Cheese | Chicken Salami | Chicken Tikka | Chicken Sausage |Green Bellpepper | Onion | Handtossed Crust",
+    "image": "https://user-images.githubusercontent.com/64483658/114353876-26e17000-9b8b-11eb-8315-7ceff0625d90.jpg",
+    "price": "49900",
+    "currency": "INR",
+    "veg": false
+  }
+]
