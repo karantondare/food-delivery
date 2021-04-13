@@ -1,21 +1,21 @@
-// import * as api from "../api/index.js";
+import * as api from "../api/index.js";
 
-export const signup = (formData, router) => async (dispatch) => {
-  // try {
-  //   const { data } = await api.signUp(formData);
-  //   dispatch({ type: "AUTH", data });
-  //   router.push("/");
-  // } catch (error) {
-  //   console.log(error);
-  // }
+export const signin = (userData, history) => async (dispatch) => {
+  try {
+    const { data } = await api.signIn(userData);
+    dispatch({ type: "AUTH", payload: data });
+    history.push("/");
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const signin = (formData, router) => async (dispatch) => {
-  // try {
-  //   const { data } = await api.signIn(formData);
-  //   dispatch({ type: "AUTH", data });
-  //   router.push("/");
-  // } catch (error) {
-  //   console.log(error);
-  // }
+export const signup = (userData, history) => async (dispatch) => {
+  try {
+    const { data } = await api.signUp(userData);
+    dispatch({ type: "AUTH", payload: data });
+    history.push("/cart");
+  } catch (error) {
+    console.log(error);
+  }
 };

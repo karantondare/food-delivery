@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useShoppingCart } from "use-shopping-cart";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
-import { red, green, blue } from "@material-ui/core/colors";
+import { red, green } from "@material-ui/core/colors";
 import toast from "react-hot-toast";
 import formatProductPrice from "../utlis/formatProductPrice";
 
@@ -14,6 +14,7 @@ const PizzaCard = ({ pizza }) => {
     incrementItem,
     decrementItem,
   } = useShoppingCart();
+
   const price = formatProductPrice(pizza);
 
   const addToCart = () => {
@@ -33,9 +34,9 @@ const PizzaCard = ({ pizza }) => {
   const pizzaCartDetails = cartDetails[pizzaId];
 
   return (
-    <div className="w-64 h-2/4 h-full border-2 border-gray-300 rounded-lg overflow-hidden ">
-      <img className="mb-4 w-full" src={pizza.image} alt="pizza" />
-      <div className="text-center flex flex-col items-between pb-4">
+    <div className="w-64 h-2/4 h-full  overflow-hidden ">
+      <img className="w-full" src={pizza.image} alt="pizza" />
+      <div className="text-center flex flex-col h-56 justify-around items-between pb-4 border-l-2  border-r-2 border-b-2 border-gray-200 rounded-b-lg">
         <div>
           <h2 className=" text-lg">{pizza.name}</h2>
           <div className="flex justify-center">
@@ -58,19 +59,19 @@ const PizzaCard = ({ pizza }) => {
           {pizzaCartDetails && pizzaCartDetails["quantity"] ? (
             <div className="flex justify-between">
               <button
-                onClick={increamentQuantity}
-                className="rounded-l-full	border-2 border-yellow-500 px-2"
+                onClick={decreamentQuantity}
+                className="rounded-l-full	border-2 border-yellow-500 px-2 transition duration-500 ease-in-out"
               >
-                <AddIcon />
+                <RemoveIcon />
               </button>
-              <p className="px-4 border-yellow-500 border-t-2	border-b-2 transition duration-500 ease-in-out	">
+              <p className="px-4 font-bold border-yellow-500 border-t-2	border-b-2 transition duration-500 ease-in-out	">
                 {pizzaCartDetails.quantity}
               </p>
               <button
-                onClick={decreamentQuantity}
-                className="rounded-r-full	border-2 border-yellow-500 px-2 transition duration-500 ease-in-out"
+                onClick={increamentQuantity}
+                className="rounded-r-full	border-2 border-yellow-500 px-2"
               >
-                <RemoveIcon />
+                <AddIcon />
               </button>
             </div>
           ) : (

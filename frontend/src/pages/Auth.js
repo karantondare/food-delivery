@@ -4,14 +4,14 @@ import { useHistory } from "react-router-dom";
 import { signin, signup } from "../actions/authActions";
 
 const initialState = {
-  name: "",
+  fullname: "",
   email: "",
   password: "",
   confirmPassword: "",
 };
 
 const Auth = () => {
-  const [isSignup, setIsSignup] = useState(false);
+  const [isSignup, setIsSignup] = useState(true);
   const [userData, setUserData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
