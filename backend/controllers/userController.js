@@ -1,64 +1,100 @@
-const bcrypt = require("bcryptjs"); // string hasher
-const jwt = require("jsonwebtoken");
-const mongoose = require("mongoose");
-const User = require("../models/menuModel.js");
+import asyncHandler from "express-async-handler";
 
-exports.signin = async (req, res) => {
+import User from "../models/UserModel.js";
+import generateToken from "../utils/generateToken.js";
+
+const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  try {
-    const existingUser = await User.findOne({ email });
+  const user = await User.findOne({ email });
+  if (!user) return res.status(404).json({ message: "user not found" });
 
-    if (!existingUser)
-      return res.status(404).json({ message: "User doen't exist." });
-
-    const isPasswordCorrect = await bcrypt.compare(
-      password,
-      existingUser.password
-    );
-
-    if (!isPasswordCorrect)
-      return res.status(400).json({ message: "Invalid credentials" });
-
-    const token = jwt.sign(
-      { email: existingUser.email, id: existingUser.id },
-      "user",
-      { expiresIn: "1h" }
-    );
-
-    res.status(200).json({ result: existingUser, token });
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong" });
-  }
-};
-
-exports.signup = async (req, res) => {
-  const { fullname, email, password, confirmPassword } = req.body;
-  console.log("here", req.body);
-  try {
-    console.log("now here");
-
-    const existingUser = await User.findOne({ email });
-
-    if (existingUser)
-      return res.status(400).json({ message: "User already exists." });
-
-    if (password !== confirmPassword)
-      return res.status(400).json({ message: "Passwords don't match" });
-
-    const hashedPassword = await bcrypt.hash(password, 12);
-
-    const result = await new User.create({
-      email,
-      password: hashedPassword,
-      fullname,
+  if (user && (await user.matchPassword(password))) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: generateToken(user._id),
     });
-    console.log("here", result);
-    const token = jwt.sign({ email: result.email, id: result.id }, "user", {
-      expiresIn: "1h",
-    });
-    res.status(200).json({ result, token });
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong" });
+  } else {
+    res.status(401);
+    throw new Error("Invalid email or password");
   }
-};
+});
+
+const registerUser = asyncHandler(async (req, res) => {
+  const { name, email, password } = req.body;
+
+  const userExists = await User.findOne({ email });
+
+  if (userExists) {
+    res.status(400);
+    throw new Error("User already exists");
+  }
+
+  const user = await User.create({
+    name,
+    email,
+    password,
+  });
+
+  if (user) {
+    res.status(201).json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: generateToken(user._id),
+    });
+  } else {
+    res.status(400);
+    throw new Error("Invalid user data");
+  }
+});
+
+//get user profile
+const getUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
+
+  if (user) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    });
+  } else {
+    res.status(404);
+    throw new Error("Invalid email or password");
+  }
+});
+
+//update user profile
+const updateUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
+
+  if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+
+    if (req.body.password) {
+      user.password = req.body.password;
+    }
+
+    const updatedUser = await user.save();
+
+    res.json({
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+      token: generateToken(updatedUser._id),
+    });
+  } else {
+    res.status(404);
+    throw new Error("User not found");
+  }
+});
+
+export { authUser, getUserProfile, registerUser, updateUserProfile };

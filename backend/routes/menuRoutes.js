@@ -1,12 +1,14 @@
-const express = require("express");
-const Menu = require("../models/menuModel.js");
-const mongoose = require("mongoose");
-const menu = require("./menu.json");
+import express from "express";
+import Menu from "../models/MenuModel.js";
 
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  res.status(200).json({ menu });
+  try {
+    const fullMenu = await Menu.find({});
+
+    res.status(200).json(fullMenu);
+  } catch (error) {}
 });
 
-module.exports = router;
+export default router;

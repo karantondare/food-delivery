@@ -35,10 +35,10 @@ const PizzaCard = ({ pizza }) => {
 
   return (
     <div className="w-64 h-2/4 h-full  overflow-hidden ">
-      <img className="w-full" src={pizza.image} alt="pizza" />
+      <img className="w-full rounded-t-lg	" src={pizza.image} alt="pizza" />
       <div className="text-center flex flex-col h-56 justify-around items-between pb-4 border-l-2  border-r-2 border-b-2 border-gray-200 rounded-b-lg">
         <div>
-          <h2 className=" text-lg">{pizza.name}</h2>
+          <h2 className="mt-3 text-lg">{pizza.name}</h2>
           <div className="flex justify-center">
             <span>
               [

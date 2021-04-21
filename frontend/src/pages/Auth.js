@@ -4,14 +4,14 @@ import { useHistory } from "react-router-dom";
 import { signin, signup } from "../actions/authActions";
 
 const initialState = {
-  fullname: "",
+  name: "",
   email: "",
   password: "",
   confirmPassword: "",
 };
 
 const Auth = () => {
-  const [isSignup, setIsSignup] = useState(true);
+  const [isSignup, setIsSignup] = useState(false);
   const [userData, setUserData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -46,8 +46,8 @@ const Auth = () => {
                 <input
                   type="text"
                   className="block border border-yellow-500 w-full p-3 rounded mb-4"
-                  name="fullname"
-                  placeholder="Full Name"
+                  name="name"
+                  placeholder="Name"
                   onChange={handleChange}
                 />
               )}

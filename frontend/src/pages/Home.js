@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   let { data: menu, isLoading } = useQuery("Pizzas", () =>
-    axios("http://localhost:3001/menu").then((res) => res.data.menu)
+    axios("http://localhost:3001/menu").then((res) => res.data)
   );
 
   const bestPizzas = [];
@@ -19,8 +19,6 @@ const Home = () => {
       const newMenu = menu.filter((item) => bestPizzas[i].id !== item.id);
       menu = newMenu;
     }
-    console.log("menu", menu);
-    console.log("best", bestPizzas);
   }
 
   return (

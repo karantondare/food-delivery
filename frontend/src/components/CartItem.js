@@ -9,7 +9,7 @@ const CartItem = ({ item }) => {
   return (
     <div className="flex justify-between items-center my-8">
       <div className="flex items-center">
-        <img className="w-2/5" src={item.image} alt="pizza" />
+        <img className="w-1/4	rounded-sm" src={item.image} alt="pizza" />
         <div className="pl-4">
           <h1 className="text-lg">{item.name}</h1>
           <span>Quantity : </span>
@@ -23,9 +23,11 @@ const CartItem = ({ item }) => {
           />
         </div>
       </div>
-      <span className="text-lg font-bold">
-        {formatProductPrice(item)} x {item.quantity}
-      </span>
+      <div className="w-16">
+        <span className="text-lg">
+          {formatProductPrice(item)} x {item.quantity}
+        </span>
+      </div>
     </div>
   );
 };

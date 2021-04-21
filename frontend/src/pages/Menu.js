@@ -5,7 +5,7 @@ import PizzaCard from "../components/PizzaCard";
 
 const Menu = () => {
   const { data: menu, isLoading } = useQuery("Pizzas", () =>
-    axios("http://localhost:3001/menu").then((res) => res.data.menu)
+    axios("http://localhost:3001/menu").then((res) => res.data)
   );
 
   return (

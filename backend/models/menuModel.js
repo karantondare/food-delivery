@@ -1,12 +1,14 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const menuSchema = mongoose.Schema({
-  name: {
-    type: String,
-    image: String,
-    price: String,
-    size: String,
-  },
+  id: { type: String },
+  name: { type: String },
+  description: { type: String },
+  image: { type: String },
+  price: { type: String },
+  currency: { type: String },
+  veg: { type: Boolean },
 });
 
-const Menu = mongoose.model("Menu", menuSchema);
+const Menu = mongoose.model("menu", menuSchema);
+export default Menu;
